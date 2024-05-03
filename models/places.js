@@ -1,16 +1,12 @@
-places = [{
-	name: 'H-Thai-ML',
-	city: 'Seattle',
-	state: 'WA',
-	cuisines: 'Thai, Pan-Asian',
-	pic: 'http://placekitten.com/g/100/200'
-    }, {
-	name: 'Coding Cat Cafe',
-	city: 'Phoenix',
-	state: 'AZ',
-	cuisines: 'Coffee, Bakery',
-	pic: 'http://placekitten.com/g/100/200'
-}]
+const mongoose = require('mongoose')
 
+const placeSchema = new mongoose.Schema({
+	name: { type: String, required: true },
+	pic: String,
+	cuisines: { type: String, required: true },
+	city: { type: String, default: 'Anytown' },
+	state: { type: String, default: 'USA' },
+	founded: Number
+})
 
-module.exports = places;
+module.exports = mongoose.model('Place', placeSchema)
