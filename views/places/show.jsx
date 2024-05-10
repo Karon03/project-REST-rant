@@ -7,6 +7,7 @@ function show({ place }) {
             No comments yet!
         </h3>
     )
+
     if (place.comments.length) {
         comments = place.comments.map(c => {
             return (
@@ -58,11 +59,12 @@ function show({ place }) {
                             {comments ? comments : "No Comments"}
                         </h3>
                     </div>
+                    <a href={`/places/${place.id}/comment`}>Add New Comment</a>
                 </div>
             </main>
         </Def>
     )
 }
 
-module.exports = show
+module.exports = sho
 
