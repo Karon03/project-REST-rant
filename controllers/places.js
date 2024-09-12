@@ -56,6 +56,11 @@ router.get('/:id/comment', (req, res) => {
 router.post('/:id/comment', (req, res) => {
     console.log("!!!!!!!!!!!!!!")
     console.log(req.body)
+    if (req.body.rant = "on") {
+        req.body.rant = true
+    } else {
+        req.body.rant = false
+    }
     db.Place.findById(req.params.id)
         .then(place => {
             console.log("Place to add comment:")

@@ -66,5 +66,5 @@ function show({ place }) {
     )
 }
 
-module.exports = sho
+module.exports = show
 
